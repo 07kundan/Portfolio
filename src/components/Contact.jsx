@@ -2,7 +2,10 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="h-screen w-full flex justify-center items-center bg-fuchsia-400 *:">
+    <div
+      id="Contact"
+      className="h-screen w-full flex justify-center items-center bg-fuchsia-400 *:"
+    >
       <form action="" className=" flex flex-col gap-4 p-4 items-center w-full ">
         <div className="w-[60%] flex justify-between">
           <label htmlFor="Name">Enter your Name</label>
