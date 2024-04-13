@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+// tailwind.config.js
+module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -7,5 +7,9 @@ export default {
     extend: {},
   },
   plugins: [],
-}
-
+  experimental: {
+    applyComplexClasses: true,
+    extendedSpacingScale: true,
+    sticky: true, // enable the sticky utility
+  },
+};
