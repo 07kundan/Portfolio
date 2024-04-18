@@ -1,17 +1,24 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
 import { FiDownload } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function HeroSection() {
   return (
     <>
-      <div
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.5, delay: 0.5 }}
         id="About"
-        className="h-screen w-full font-[RubikScribble] p-4 pt-14 text-[#FCA311] flex flex-col gap-16 relative lg:flex-row-reverse lg:gap-2 lg:px-20"
+        className="h-screen w-full font-[RubikScribble] p-4 pt-14 text-[#FCA311] flex flex-col relative top-0 lg:flex-row-reverse lg:gap-2 lg:px-20"
       >
         {/* right-section / Image */}
-        {/* <div className="lg:w-full "> */}
-        <div className="flex justify-center lg:w-[50%] lg:items-center ">
+        <div className="flex justify-center items-center h-[40%] lg:h-full lg:w-[50%] ">
           <img
             className="rounded-full"
             src="./src/assets/Pic.jpg"
@@ -19,10 +26,9 @@ function HeroSection() {
             style={{ height: "300px" }}
           />
         </div>
-        {/* </div> */}
 
         {/* left-section */}
-        <div className=" text-4xl h-full flex lg:w-[60%] lg:items-center lg:p-4 lg:pl-14">
+        <div className=" text-4xl h-[45%]  p-4 lg:h-full flex lg:w-[60%] lg:items-center lg:pl-14">
           <div>
             <span>Hey...</span> <br />
             <span className="pl-6">I'm KUNDAN</span>
@@ -56,7 +62,7 @@ function HeroSection() {
         </div>
 
         {/* CV-Button */}
-        <div className="absolute bottom-28 left-1/2 -translate-x-1/2 lg:bottom-24 ">
+        <div className="absolute bottom-[14%] left-1/2 -translate-x-1/2 lg:bottom-20 ">
           <a
             className="p-2 px-4 bg-slate-500 bg-opacity-25 rounded-xl flex items-center gap-2"
             href="https://drive.usercontent.google.com/u/0/uc?id=1dkNue96PFcOZL1s8hzhEP3XM8Nka7fAz&export=download "
@@ -68,7 +74,7 @@ function HeroSection() {
             </button>
           </a>
         </div>
-      </div>
+      </motion.div>
       <hr />
     </>
   );

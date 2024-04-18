@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 function Contact() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-380px", once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      // fire the animation
+      controls.start("visible");
+    }
+  }, [isInView]);
+
   return (
     <>
-      <div
+      <motion.div
+        ref={ref}
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 0.5, delay: 0.25 }}
         id="Contact"
         className="h-screen p-4 flex items-center justify-center text-[#FCA311] lg:pt-12"
       >
@@ -54,7 +74,7 @@ function Contact() {
             </div>
           </form>
         </div>
-      </div>
+      </motion.div>
       <hr />
     </>
   );

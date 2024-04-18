@@ -7,20 +7,21 @@ import Skills from "./components/Skills";
 import MediaLinks from "./components/MediaLinks";
 
 function App() {
+  const ref = useRef(null);
+
   return (
     <>
       {/* background */}
-      <div className="h-screen fixed top-0 blur-sm w-screen bg-cover bg-no-repeat bg-[url(src\ass\background.jpg)] -z-10 border-none"></div>
+      <div className="h-screen fixed top-0 blur-sm w-screen bg-cover bg-black bg-no-repeat bg-[url(src\ass\background.jpg)] -z-10 border-none"></div>
 
       {/* Components */}
-      <div className="">
-        <Navbar />
-        <HeroSection />
-        <MediaLinks />
-        <Skills />
-        <ProjectList />
-        <Contact />
-      </div>
+
+      <Navbar />
+      <HeroSection />
+      <MediaLinks />
+      <Skills />
+      <ProjectList />
+      <Contact />
     </>
   );
 }
